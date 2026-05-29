@@ -1,0 +1,17 @@
+# AWS credentials
+*.pem
+.aws/
+*.key
+
+# Secrets
+.env
+config.json
+password.txt
+credentials.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
