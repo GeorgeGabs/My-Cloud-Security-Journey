@@ -4,7 +4,7 @@
 ## 📚 Overview
 Documenting my journey from zero to cloud security engineer.
 
-**Start Date:** May 25, 2026
+**Start Date:** June 2, 2026
 **Goal:** Master cloud security and land a job
 
 ## 🎯 Learning Roadmap
@@ -22,18 +22,10 @@ Documenting my journey from zero to cloud security engineer.
 ## 📝 Week 1 Progress
 
 **Status:** IN PROGRESS
-- ✅ Created AWS account with MFA
-- ✅ Launched EC2 instance  
-- ✅ Connected via SSH
-- 🔄 Learning Linux commands
-- ⏳ Installing web server
 
 ## 🛠️ Tools
 - Cloud Platform: AWS
 - Terminal: Windows PowerShell
 - Version Control: GitHub
-
-## 🔐 Security Note
-**This repo contains NO credentials, API keys, or passwords.**
 
 💪 No giving up. Just learning.
