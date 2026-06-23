@@ -90,7 +90,7 @@ Keep root locked away (emergency only)
 
 Free tier: $0
 
-But if you accidentally:
+But if I accidentally:
 
 Launch expensive instance
 Transfer data across regions
@@ -111,7 +111,7 @@ Solution: Alerts = warning before damage
 ## EC2 Instance Creation
 
 ### The Mission
-**Goal:** Launch your first cloud server (EC2 instance)
+**Goal:** Launch my first cloud server (EC2 instance)
 
 ### Instance Details
 
@@ -237,7 +237,7 @@ They can't get in
 icacls "my-first-key.pem" /inheritance:r /grant:r "$env:username`:F"
 ```
 
-**Why?** Windows is paranoid about .pem file permissions. This restricts it to ONLY you.
+**Why?** Windows is paranoid about .pem file permissions. This restricts it to ONLY me.
 
 #### 2. Connect to Server
 ```powershell
@@ -262,18 +262,18 @@ Type: `yes`
 **Result:** Connected! 
 ec2-user@ip-172-31-0-1:~$
 
-**You're now inside your cloud server!**
+**I am now inside your cloud server!**
 
 ---
 
-## What You Can Do Now
+## What I Can Do Now
 
-### From Your Windows Computer
+### From my Windows Computer
 ```powershell
 # Connect to cloud server
 ssh -i "my-first-key.pem" ec2-user@16.170.254.27
 
-# You're now in Linux!
+# I am now in Linux!
 # Run any Linux command
 pwd
 ls
@@ -282,13 +282,13 @@ cat /etc/hostname
 ```
 
 ### Power Realization
-Your laptop in Nigeria/UK
+My laptop in Nigeria/UK
 
 ↓ (SSH over internet)
 
 AWS server in Ireland
 
-↓ (You control it!)
+↓ (I control it!)
 
 Run commands instantly
 
@@ -475,11 +475,11 @@ AWS Management Console
 
 └── CloudTrail (Audit logs)
 
-### Finding Your Instance
+### Finding My Instance
 1. Go to AWS Console
 2. Go to EC2
 3. Click "Instances"
-4. Find your instance (Running status)
+4. Find my instance (Running status)
 5. Copy Public IPv4 address
 6. Use with SSH command
 
@@ -514,7 +514,7 @@ AWS Management Console
 
 ## What This Enables
 
-With this foundation, you can:
+With this foundation, i can:
 -  Launch cloud infrastructure
 -  Connect securely to servers
 -  Understand cloud security basics
