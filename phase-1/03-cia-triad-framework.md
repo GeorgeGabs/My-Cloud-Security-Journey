@@ -236,9 +236,9 @@ Receiver: Verifies signature
 
 Result: Proves authenticity and that it hasn't changed
 
-### Integrity in Your Work
+### Integrity in My Work
 
-**CloudTrail Logs You Found:**
+**CloudTrail Logs I Found:**
 
 journalctl | grep -i "admin"
 
@@ -610,7 +610,7 @@ Startup != Fortune 500 level of security
 - Off-site disaster recovery
 - (Lives depend on it!)
 
-### Scenario 3: Startup (Like Yours!)
+### Scenario 3: Startup (Like Mine!)
 
 **Confidentiality:**
 - Basic encryption
@@ -629,9 +629,9 @@ Startup != Fortune 500 level of security
 
 ---
 
-## CIA Triad and Your IAM Design
+## CIA Triad and My IAM Design
 
-### How Your Structure Protects CIA
+### How My Structure Protects CIA
 CONFIDENTIALITY:
 
 developer_test limited access
@@ -714,5 +714,3 @@ This foundation unlocks understanding of:
 
 **Key Learning:** CIA Triad is THE framework for security engineering.
 Every decision you make in security relates back to these three pillars.
-
----
