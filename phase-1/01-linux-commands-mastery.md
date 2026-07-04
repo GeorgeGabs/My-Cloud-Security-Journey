@@ -15,9 +15,9 @@ pwd
 Before doing ANYTHING with files, you must know where you are. Prevents accidental deletion or modification of wrong files.
 
 ### When To Use It
-> First thing when you SSH into a server
-> After moving between folders (verify location)
-> When you're confused about where you are
+- First thing when you SSH into a server
+- After moving between folders (verify location)
+- When you're confused about where you are
 
 ### Security Reason
 Knowing your exact location prevents catastrophic mistakes. "Delete this file" is safe in /tmp/ but DANGEROUS in /etc
@@ -46,22 +46,22 @@ drwxr-xr-x  3 ec2-user ec2-user  4096 May 28 10:45 Desktop
 ```
 
 ### What Each Part Means
-> `d` at start = directory (folder)
-> `-` at start = regular file
-> `rwxr-xr-x` = permissions (read, write, execute)
-> `ec2-user` = owner of file
-> `4096` = size in bytes
-> `May 28 10:45` = last modified date/time
+- `d` at start = directory (folder)
+- `-` at start = regular file
+- `rwxr-xr-x` = permissions (read, write, execute)
+- `ec2-user` = owner of file
+- `4096` = size in bytes
+- `May 28 10:45` = last modified date/time
 
 ### Why You Need It
 See what's on the system. Spot suspicious files. Understand directory structure. CRITICAL for security investigations.
 
 ### When To Use It
-> Check what's in a folder
-> Verify file sizes
-> See file permissions
-> Spot unexpected files (security audit!)
-> Track file modifications
+- Check what's in a folder
+- Verify file sizes
+- See file permissions
+- Spot unexpected files (security audit!)
+- Track file modifications
 
 ### Security Reason
 Hackers might hide files. `ls -la` shows EVERYTHING including hidden files (starting with `.`). One of your first tools in incident response.
@@ -107,19 +107,19 @@ ec2-user@instance:/var/log$ pwd
 ```
 
 ### Key Differences
-> `cd /var` = Go to /var from ANYWHERE
-> `cd var` = Go to var folder IN YOUR CURRENT LOCATION
-> `cd ..` = Go UP one level to parent
-> `cd -` = Go BACK to previous location (like browser back button!)
+- `cd /var` = Go to /var from ANYWHERE
+- `cd var` = Go to var folder IN YOUR CURRENT LOCATION
+- `cd ..` = Go UP one level to parent
+- `cd -` = Go BACK to previous location (like browser back button!)
 
 ### Why You Need It
 Navigate the file system. Find configuration files. Investigate security issues. Explore logs.
 
 ### When To Use It
-> Move between folders constantly
-> Access system files for investigation
-> Navigate to log directories
-> Security incident response
+- Move between folders constantly
+- Access system files for investigation
+- Navigate to log directories
+- Security incident response
 
 ### Security Reason
 Wrong location = wrong file modified = disaster! Navigation precision is critical!
@@ -152,23 +152,23 @@ This is line 2
 ```
 
 ### Critical Symbol Differences
- `>` = CREATE or OVERWRITE file (dangerous!)
- `>>` = APPEND to file (safe, adds without deleting)
+- `>` = CREATE or OVERWRITE file (dangerous!)
+- `>>` = APPEND to file (safe, adds without deleting)
 
 ### Why You Need It
 Quick file creation. Writing content without editor. Automating tasks. Creating test data.
 
 ### When To Use It
-> Create simple files quickly
-> Write configuration values
-> Generate test data
-> Automate repetitive writing tasks
+- Create simple files quickly
+- Write configuration values
+- Generate test data
+- Automate repetitive writing tasks
 
 ### Security Warning
-❌ **NEVER use `echo` for passwords!**
-> Passwords visible in shell history
-> Anyone can read your command history
-> Use files or environment variables instead
+**NEVER use `echo` for passwords!**
+- Passwords visible in shell history
+- Anyone can read your command history
+- Use files or environment variables instead
 
 ## Command #5: cat (Concatenate/Read)
 
@@ -200,10 +200,10 @@ ec2-user@instance:~$ cat -n myfile.txt
 Read configuration files. Check log files. Understand system settings. Spot malicious changes.
 
 ### When To Use It
-> Read config files (`/etc/ssh/sshd_config`)
-> Check log files (`/var/log/auth.log`)
-> Verify file contents
-> Security investigations
+- Read config files (`/etc/ssh/sshd_config`)
+- Check log files (`/var/log/auth.log`)
+- Verify file contents
+- Security investigations
 
 ### Real Security Examples
 ```bash
@@ -251,10 +251,10 @@ file1.txt  file2.txt  file3.txt  myfile.txt
 Create placeholder files. Set up file structure. Create files you'll edit later.
 
 ### When To Use It
-> Create empty configuration files
-> Create script files before editing
-> Create log files before applications use them
-> Prepare file structure
+- Create empty configuration files
+- Create script files before editing
+- Create log files before applications use them
+- Prepare file structure
 
 ### Security Concern 
 **Hackers can change timestamps to hide!**
@@ -267,10 +267,10 @@ touch -t 202305011000 /etc/passwd
 ```
 
 **Defense:**
-> Use immutable logs (CloudTrail)
-> Check file hashes (fingerprints)
-> Monitor files in REAL-TIME
-> Don't trust timestamps alone!
+- Use immutable logs (CloudTrail)
+- Check file hashes (fingerprints)
+- Monitor files in REAL-TIME
+- Don't trust timestamps alone!
 
 ## Command #7: grep (Search/Filter)
 
@@ -307,11 +307,11 @@ ec2-user@instance:~$ grep -c "Failed" auth.log
 Search massive log files instantly. Find security incidents. Spot patterns. Analyze system activity.
 
 ### When To Use It
-> Search logs for errors
-> Find failed login attempts
-> Look for specific users
-> Spot suspicious activity
-> Analyze large files
+- Search logs for errors
+- Find failed login attempts
+- Look for specific users
+- Spot suspicious activity
+- Analyze large files
 
 ### Real Security Use
 **Finding real hackers:**
@@ -340,11 +340,11 @@ nano filename           # Open/create file
 nano myfile.txt
 
 # Inside nano:
-> Type your text
-> Ctrl+O = Save (WriteOut)
-> Ctrl+X = Exit
-> Ctrl+W = Search
-> Ctrl+K = Delete line
+- Type your text
+- Ctrl+O = Save (WriteOut)
+- Ctrl+X = Exit
+- Ctrl+W = Search
+- Ctrl+K = Delete line
 ```
 
 ### Real Example
@@ -366,16 +366,16 @@ encryption=AES256
 Edit configuration files. Create scripts. Modify system settings. Better than `echo` for multi-line content.
 
 ### When To Use It
-> Edit SSH configuration
-> Create shell scripts
-> Modify application config
-> Write documentation
-> Any time you need interactive editing
+- Edit SSH configuration
+- Create shell scripts
+- Modify application config
+- Write documentation
+- Any time you need interactive editing
 
 ### vs `echo`
-> `echo` = Quick single line
-> `nano` = Multi-line, interactive editing
-> `nano` = Better approach
+- `echo` = Quick single line
+- `nano` = Multi-line, interactive editing
+- `nano` = Better approach
 
 ## Command #9: chmod (Change Permissions)
 
@@ -421,10 +421,10 @@ ec2-user@instance:~$ ls -l myscript.sh
 Control access to sensitive files. Prevent accidental modification. Security enforcement.
 
 ### When To Use It
-> SSH keys must be 600 (owner only!)
-> Config files often 644 (owner edit, others read)
-> Scripts often 755 (everyone can run)
-> Backups often 600 (secure)
+- SSH keys must be 600 (owner only!)
+- Config files often 644 (owner edit, others read)
+- Scripts often 755 (everyone can run)
+- Backups often 600 (secure)
 
 ### Security Critical
  **NEVER use 777** (everyone can do anything!)
@@ -437,10 +437,10 @@ chmod 777 anything
 ```
 
  **ALWAYS use minimal:**
-> SSH keys: 600
-> Config files: 644
-> Scripts: 755
-> Sensitive files: 600
+- SSH keys: 600
+- Config files: 644
+- Scripts: 755
+- Sensitive files: 600
 
 ## Command #10: sudo (Super User Do)
 
@@ -473,11 +473,11 @@ sudo chown root:root myfile.txt
 Edit system files. Install software. Manage services. Change critical settings.
 
 ### When To Use It
-> Edit system configuration
-> Install packages
-> Restart services
-> Manage users/groups
-> View restricted logs
+- Edit system configuration
+- Install packages
+- Restart services
+- Manage users/groups
+- View restricted logs
 
 ###  DANGER 
 **`sudo` is POWERFUL and DANGEROUS!**
@@ -492,11 +492,11 @@ sudo rm -rf /
 **Rule:** Think 3 times before using sudo with rm, mkfs, or deletion!
 
 ### Security Considerations
-> Only use sudo when necessary
-> Think before you type
-> `sudo` can break your system
-> Never give sudo to untrusted people
-> Monitor who uses sudo (CloudTrail logs it!)
+- Only use sudo when necessary
+- Think before you type
+- `sudo` can break your system
+- Never give sudo to untrusted people
+- Monitor who uses sudo (CloudTrail logs it!)
 
 ## Bonus: The PIPE Operator `|`
 
@@ -520,9 +520,9 @@ journalctl | grep -i "failed"
 ```
 
 ### Why It's Powerful
-> Combine commands
-> Filter large outputs
-> Process data step-by-step
+- Combine commands
+- Filter large outputs
+- Process data step-by-step
 
 ### Real Security Use
 ```bash
@@ -565,10 +565,10 @@ journalctl | grep "error" | tail -10
 ## Next Phase
 
 These commands are the foundation for:
-> Phase 2: IAM management
-> Phase 3: Network security
-> Phases 4-7: Advanced security
-> Real job: Daily tools.
+- Phase 2: IAM management
+- Phase 3: Network security
+- Phases 4-7: Advanced security
+- Real job: Daily tools.
 
 **Status:** Phase 1 Commands MASTERED 
 
