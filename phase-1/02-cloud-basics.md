@@ -13,7 +13,7 @@ Complete documentation of AWS setup, EC2 instance creation, and cloud fundamenta
 ### Steps Completed
 
 #### 1. Root Account Creation
-- Email: Personal email address
+> Email: Personal email address
 - Password: Strong password created
 - Phone number: Added for recovery
 - Payment method: Added (for free tier)
