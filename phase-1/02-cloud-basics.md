@@ -1,13 +1,11 @@
-# Cloud Basics - Phase 1
+# Cloud Basics: Phase 1
 
 Complete documentation of AWS setup, EC2 instance creation, and cloud fundamentals learned.
-
----
 
 ## AWS Account Creation & Setup
 
 ### The Beginning
-**Date:** June 2, 2025  
+**Date:** June 2, 2026 
 **Task:** Create AWS account with security best practices
 
 ### Steps Completed
@@ -22,8 +20,6 @@ Complete documentation of AWS setup, EC2 instance creation, and cloud fundamenta
 -  Created root account
 -  **IMPORTANT:** Did NOT use root for daily work (best practice!)
 -  Root account is dangerous (has ALL permissions)
-
----
 
 ### 2. Multi-Factor Authentication (MFA) Setup
 
@@ -43,12 +39,10 @@ Two layers = much safer!
 1. Logged into root account
 2. Went to IAM console
 3. Enabled MFA
-4. Used Authenticator app (time-based tokens)
+4. Used Authenticator app (time based tokens)
 5. Generated backup codes (saved securely)
 
 **Result:** Root account now protected with 2FA 
-
----
 
 ### 3. IAM User Creation
 
@@ -82,8 +76,6 @@ Use Mycloudlab for daily work
 
 Keep root locked away (emergency only)
 
----
-
 ### 4. Billing Alerts Setup
 
 **Why billing alerts?**
@@ -106,8 +98,6 @@ Solution: Alerts = warning before damage
 
 **Real Lesson:** Free tier is free ONLY if you're careful! 
 
----
-
 ## EC2 Instance Creation
 
 ### The Mission
@@ -121,13 +111,13 @@ AMI (Operating System): Amazon Linux 2
 
 Instance Type: t3.micro (smallest, free tier eligible)
 
-Region: eu-west-1 (Europe - Ireland)
+Region: eu-west-1 (Europe;Ireland)
 
 Availability Zone: eu-west-1a
 
-Instance ID: i-0655e524004d40ba8
+Instance ID: i-0655e524004d40cb9
 
-Public IPv4: 16.170.254.27
+Public IPv4: 19.180.254.27
 
 Status: Running (connected via SSH)
 
@@ -143,8 +133,6 @@ Status: Running (connected via SSH)
 -  Good for learning
 -  Different from Ubuntu (good to know both!)
 
----
-
 ### Key Pair Creation
 
 **What is a key pair?**
@@ -158,7 +146,7 @@ Without key = Can't enter house (server)
 **Process:**
 1. Created key pair: "my-first-key"
 2. Downloaded .pem file
-3. Saved in: C:\Users\UK\downloads\
+3. Saved in: Downloads
 
 **Critical Security:**
 
@@ -178,13 +166,10 @@ Without key = Can't enter house (server)
 
 This prevents accidental commits!
 
----
-
 ### Security Group Setup (The Learning Moment!)
 
 **What is a security group?**
 It's a firewall:
-
 - Defines what traffic is allowed IN/OUT
 - Default: DENY ALL (nothing allowed)
 - You explicitly allow what you need
@@ -207,11 +192,11 @@ Protocol: TCP
 
 Port: 22
 
-Source: My IP (0.0.0.0/0 for testing, not production!)
+Source: My IP (0.0.0.0/0 for testing, not production)
 **Result:** SSH access restored 
 
 **Security Lesson:**
-This is GOOD design!
+This is a GOOD design
 
 Default deny = secure
 
@@ -221,8 +206,6 @@ If hacker tries SSH:
 
 Security group blocks it
 They can't get in
-
----
 
 ### SSH Connection Setup (Windows PowerShell)
 
@@ -241,7 +224,7 @@ icacls "my-first-key.pem" /inheritance:r /grant:r "$env:username`:F"
 
 #### 2. Connect to Server
 ```powershell
-ssh -i "my-first-key.pem" ec2-user@16.170.254.27
+ssh -i "my-first-key.pem" ec2-user@19.180.254.27
 ```
 
 **Breaking it down:**
@@ -249,7 +232,7 @@ ssh -i "my-first-key.pem" ec2-user@16.170.254.27
 - `-i` = Identity file (your key)
 - `"my-first-key.pem"` = Your key file
 - `ec2-user` = Username (default for Amazon Linux)
-- `16.170.254.27` = Server IP address
+- `19.180.254.27` = Server IP address
 
 #### 3. First SSH Connection
 The authenticity of host can't be established.
@@ -262,16 +245,14 @@ Type: `yes`
 **Result:** Connected! 
 ec2-user@ip-172-31-0-1:~$
 
-**I am now inside your cloud server!**
-
----
+**I am now inside my cloud server!**
 
 ## What I Can Do Now
 
 ### From my Windows Computer
 ```powershell
 # Connect to cloud server
-ssh -i "my-first-key.pem" ec2-user@16.170.254.27
+ssh -i "my-first-key.pem" ec2-user@19.180.254.27
 
 # I am now in Linux!
 # Run any Linux command
@@ -292,31 +273,25 @@ AWS server in Ireland
 
 Run commands instantly
 
-**This is cloud computing!**
-
----
-
 ## GitHub Setup
 
 ### Why GitHub?
 
 Local files:
-
-Lost if computer dies
-No history
-Can't share
+- Lost if computer dies
+- No history
+- Can't share
 
 GitHub:
-
-Cloud backup
-Full history
-Professional portfolio
-Version control
+- Cloud backup
+- Full history
+- Professional portfolio
+- Version control
 
 ### Repository Created
 - **Name:** My-Cloud-Security-Journey
 - **Description:** 16-week cloud security engineering journey
-- **Visibility:** Public (portfolio for employers!)
+- **Visibility:** Public (portfolio for employers)
 - **URL:** github.com/GeorgeGabs/My-Cloud-Security-Journey
 
 ### Security: .gitignore File
@@ -333,7 +308,7 @@ credentials        # Any credential files
 
 secrets/           # Secret files
 
-**Why?** Prevent accidental commits of credentials. GitHub will alert you, but prevention is better!
+**Why?** Prevent accidental commits of credentials. GitHub will alert you, but prevention is better.
 
 ### Professional README
 
@@ -362,9 +337,6 @@ Week 4-16: Advanced security
 - Security architecture
 - Hands-on labs
 ```
-
----
-
 ## Free Tier Understanding
 
 ### The Reality of "Free"
@@ -407,26 +379,18 @@ Running 10 instances carelessly:
 
 Could be $100+/month!
 
----
-
 ## Security Lessons Learned
 
 ### Lesson 1: Default Deny is Secure
 
 Root account:
-
 - Can do anything
-
 - Can't track actions
-
 - Can't revoke easily
-
 - If hacked, full compromise
 Solution:
-
-Use IAM users for daily work
-
-Keep root locked away
+- Use IAM users for daily work
+- Keep root locked away
 
 ### Lesson 3: MFA Saves You
 
@@ -443,15 +407,11 @@ Much harder!
 
 ### Lesson 4: Cloud is Real Infrastructure
 
-This isn't simulation
+- This isn't simulation
 
-This is REAL server in Ireland
+- This is REAL server in Ireland
 
-REAL hackers try to break in (we found evidence!)
-
-This matters!
-
----
+- REAL hackers try to break in (I found evidence!)
 
 ## AWS Console Navigation
 
@@ -483,22 +443,18 @@ AWS Management Console
 5. Copy Public IPv4 address
 6. Use with SSH command
 
----
-
 ## Summary: Cloud Basics Completed
 
-| Task | Status | Confidence |
-|------|--------|-----------|
-| AWS account creation |  | 9/10 |
+| Task | Status |
+|------|--------|
+| AWS account creation | 
 | MFA setup |  | 9/10 |
-| IAM user creation |  | 8/10 |
-| EC2 instance launch |  | 9/10 |
-| Security group setup |  | 8/10 |
-| SSH connection |  | 9/10 |
-| GitHub setup |  | 8/10 |
-| Understanding free tier |  | 8/10 |
-
----
+| IAM user creation |  
+| EC2 instance launch |  
+| Security group setup |  
+| SSH connection |  
+| GitHub setup |  
+| Understanding free tier |  
 
 ## Key Takeaways
 
@@ -508,9 +464,7 @@ AWS Management Console
 4. **SSH = Secure way to connect to servers**
 5. **GitHub = Version control + portfolio**
 6. **Free tier is free IF you're careful**
-7. **Real hackers attack real servers** (we have evidence!)
-
----
+7. **Real hackers attack real servers** (I have evidence!)
 
 ## What This Enables
 
@@ -521,17 +475,8 @@ With this foundation, i can:
 -  Document your work professionally
 -  Investigate security incidents
 
----
-
 ## Status
 
 **Cloud Basics: MASTERED** 
 
 Ready for: Phase 2 (IAM Deep Dive)
-
----
-
-**Time:** June 2-8, 2025  
-**Effort:** ~20 hours of setup and learning  
-**Result:** Professional AWS environment ready for security engineering!
-
