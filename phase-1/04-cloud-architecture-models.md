@@ -1,8 +1,6 @@
-# Cloud Architecture Models - IaaS, PaaS, SaaS
+# Cloud Architecture Models: IaaS, PaaS, SaaS
 
 Complete documentation of cloud service models and how to choose between them.
-
----
 
 ## The Three Cloud Models
 
@@ -29,18 +27,6 @@ SaaS
        User owns everything
        (Old data centers)
 
-       ---
-
-## IaaS (Infrastructure as a Service)
-
-### Definition
-AWS provides the **infrastructure** (servers, storage, networking).  
-**You manage everything else.**
-
-### What AWS Provides
-
----
-
 ## IaaS (Infrastructure as a Service)
 
 ### Definition
@@ -50,31 +36,23 @@ AWS provides the **infrastructure** (servers, storage, networking).
 ### what AWS provides 
 
 - Physical servers (you don't see them)
-
 - Data center (location)
-
 - Network infrastructure
-
 - Storage systems
-
 - Power and cooling
 
 ### What YOU Provide
-❌ Operating system (you install Linux/Windows)
 
-❌ Database engine (you install MySQL/PostgreSQL)
-
-❌ Application code (you write it)
-
-❌ Security patches (you apply them)
-
-❌ Backups (you configure them)
-
-❌ Monitoring (you set it up)
-
-❌ Disaster recovery (you design it)
+- Operating system (you install Linux/Windows)
+- Database engine (you install MySQL/PostgreSQL)
+- Application code (you write it)
+- Security patches (you apply them)
+- Backups (you configure them)
+- Monitoring (you set it up)
+- Disaster recovery (you design it)
 
 ### Real AWS IaaS Examples
+
 EC2 (Elastic Compute Cloud):
 
 Servers you can launch
