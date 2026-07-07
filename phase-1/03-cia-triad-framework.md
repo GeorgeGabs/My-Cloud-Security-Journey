@@ -1,8 +1,6 @@
-# CIA Triad Framework - Security Foundation
+# CIA Triad Framework: Security Foundation
 
 Complete documentation of CIA Triad learning and how it applies to cloud security.
-
----
 
 ## What is CIA Triad?
 
@@ -16,24 +14,17 @@ It answers THREE fundamental questions:
 
 **Everything in security flows from these three concepts.**
 
----
-
 ## C = CONFIDENTIALITY (Keeping Secrets)
 
 ### Definition
 Only authorized people can see or access data.
 
 ### Simple Analogy
-
-You have a diary with your secrets
-
-Only YOU should read it
-
+You have a diary with your secrets and only YOU should read it.
 If a stranger reads it:
-
 Confidentiality is BROKEN
 
-### Real-World Examples
+### Real World Examples
 
 **Broken Confidentiality:**
 - Hacker steals password
@@ -58,63 +49,39 @@ Confidentiality is BROKEN
 
 #### 1. Access Control (IAM)
 
-developer_test can see:
-
+Developer_test can see:
 - Dev database
-
 - Dev S3 buckets
-developer_test CANNOT see:
-
+Developer_test CANNOT see:
 - Production database
-
 - Finance records
-
 - Customer data
 Result: Confidentiality maintained through least privilege
 
 #### 2. Encryption
-
-Data at rest (stored):
-
-Files encrypted
+Data at rest (stored): Files encrypted
 Hacker gets file: Can't read it (encrypted!)
-
-Data in transit (moving):
-
-HTTPS encryption
+Data in transit (moving): HTTPS encryption
 Hacker intercepts: Can't read it (encrypted!)
 
 #### 3. Passwords & MFA
-
-Password:
-
-Only YOU know it
-Proves you are who you say
-
-MFA:
-
-Password + phone
+Password: Only YOU know it, Proves you are who you say
+MFA: Password + phone
 Even if password stolen: Need phone too
 Double protection!
 
 #### 4. Audit Logs (CloudTrail)
-
 Who accessed what?
-
 When did they access it?
-
 What did they do?
 If confidentiality broken:
+- Can prove: "Admin user at 3:15 PM accessed customer data"
+- Can trace: Who, what, when
+- Can respond: Delete that user
 
-Can prove: "Admin user at 3:15 PM accessed customer data"
+### Confidentiality in my Work
 
-Can trace: Who, what, when
-
-Can respond: Delete that user
-
-### Confidentiality in Your Work
-
-**IAM Users You Created:**
+**IAM Users i Created:**
 
 **developer_test:**
 -  Can see: Dev database, dev S3
@@ -131,21 +98,13 @@ Can respond: Delete that user
 -  But: Protected by strong password + MFA
 - Result: Confidentiality through access control
 
----
-
 ## I = INTEGRITY (Data Hasn't Been Tampered)
 
 ### Definition
 Data is accurate and hasn't been modified without authorization.
 
 ### Simple Analogy
-
-You sign a contract
-
-Person modifies it secretly
-
-Contract doesn't match what you signed
-
+You sign a contract and someone modifies it secretly, you check and contract doesn't match what you signed.
 Integrity is BROKEN
 
 ### Real-World Examples
@@ -174,20 +133,16 @@ Integrity is BROKEN
 #### 1. Audit Logs (CloudTrail)
 
 Every action logged:
-
-WHO: ec2-user
-WHAT: DeleteObject
-WHEN: June 6, 2:32 PM
-WHERE: s3://production-data
-RESULT: Success
+- WHO: ec2-user
+- WHAT: DeleteObject
+- WHEN: June 6, 2:32 PM
+- WHERE: s3://production-data
+- RESULT: Success
 
 If data modified:
-
-CloudTrail shows: "Who changed it and when"
-
-Can prove: Changes made by hacker
-
-Can restore: From backup before change
+- CloudTrail shows: "Who changed it and when"
+- Can prove: Changes made by hacker
+- Can restore: From backup before change
 
 #### 2. Version Control
 
@@ -218,23 +173,17 @@ Integrity broken!
 #### 4. Access Controls
 
 Only authorized users can modify:
-
-- developer_test CANNOT modify production
-
+- Developer_test CANNOT modify production
 - Finance manager CANNOT modify code
-
 - Auditor CANNOT modify anything
 Result: Only trusted people can change data
 
 #### 5. Digital Signatures
 
-Signer: "This is my document"
-
-Signature: Cryptographic proof
-
-Receiver: Verifies signature
-
-Result: Proves authenticity and that it hasn't changed
+- Signer: "This is my document"
+- Signature: Cryptographic proof
+- Receiver: Verifies signature
+- Result: Proves authenticity and that it hasn't changed
 
 ### Integrity in My Work
 
@@ -245,8 +194,7 @@ journalctl | grep -i "admin"
 Shows: 18 failed admin login attempts
 
 Proof: Someone tried to break in
-
-Evidence: Can't be faked (logged in real-time)
+This was seen in real time, so no mistakes were made.
 
 **Audit Trail Benefits:**
 -  Proves what happened
@@ -255,6 +203,7 @@ Evidence: Can't be faked (logged in real-time)
 -  Protects innocent people (proves innocence!)
 
 **Example Scenario:**
+Dtabase was modified, suspect says they did not do it but cloudtrail shows proof of it being that particular person with specific time and date of the incident.
 
 Crime: Database modified
 
@@ -263,22 +212,16 @@ Suspect: "It wasn't me!"
 Proof: CloudTrail shows user "alice" at 3:15 PM modified it
 
 Reality: Alice is guilty (has evidence)
+
 Without CloudTrail:
+- Could be anyone
+- Can't prove guilt
+- Can't defend innocent
 
-Could be anyone
-
-Can't prove guilt
-
-Can't defend innocent
 With CloudTrail:
-
-Can prove exactly who
-
-Can track actions
-
-Can respond appropriately
-
----
+- Can prove exactly who
+- Can track actions
+- Can respond appropriately
 
 ## A = AVAILABILITY (Access When Needed)
 
@@ -286,18 +229,10 @@ Can respond appropriately
 Authorized users can access resources when they need them.
 
 ### Simple Analogy
-
-You have money in bank
-
-Bank is closed 24/7
-
-Can't access money when needed
-
+You have money in bank and the bank is closed 24/7, you can not access money when needed
 Availability is BROKEN
-Bank is open 24/7
-
-Can access anytime
-
+BUT;
+When bank is open 24/7, custoer can access anytime
 Availability is GOOD 
 
 ### Real-World Examples
@@ -330,14 +265,10 @@ Availability is GOOD
 
 One server fails:
 
-Customer: "Oops, down"
-Three servers (load balanced):
+Customer: "This is bad"
+Three servers (load balanced): Server 1 fails → Server 2 serves traffic; Server 2 fails → Server 3 serves traffic
 
-Server 1 fails → Server 2 serves traffic
-
-Server 2 fails → Server 3 serves traffic
-
-Customer: "Still working!"
+Customer: "Back online"
 Result: System keeps running even with failures
 
 #### 2. Backups
@@ -349,23 +280,18 @@ Backup 1: Secondary location
 Backup 2: Off-site location
 
 Backup 3: AWS S3 (geo-redundant)
-If disaster:
 
-Restore from backup
-
-Business continues
-
-Data recoverable 
+If disaster occurs:
+You can always restore from backup, data is recovered and business continues
 
 #### 3. Disaster Recovery Plan
 
 When disaster happens:
-
-Alert team (monitoring)
-Switch to backup (failover)
-Restore data (recovery)
-Verify integrity (testing)
-Resume normal operations
+- Alert team (monitoring)
+- Switch to backup (failover)
+- Restore data (recovery)
+- Verify integrity (testing)
+- Resume normal operations
 
 RTO (Recovery Time Objective): 1 hour
 
