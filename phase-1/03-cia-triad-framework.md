@@ -296,6 +296,7 @@ When disaster happens:
 RTO (Recovery Time Objective): 1 hour
 
 RPO (Recovery Point Objective): 15 minutes
+
 Business can tolerate up to 1 hour downtime
 
 Willing to lose up to 15 min of data
@@ -311,6 +312,7 @@ Alert triggers: Email, SMS, page on-call
 Team responds: Within 5 minutes
 
 Problem fixed: Before customer notices
+
 Result: Proactive availability protection
 
 #### 5. Auto-Scaling
@@ -325,7 +327,7 @@ Capacity added: Within 1 minute
 
 Availability maintained: No slowdown 
 
-### Availability in Your Work
+### Availability in my Work
 
 **AWS Free Tier Considerations:**
 
@@ -345,17 +347,13 @@ Saves money + keeps free tier valid
 Your EC2 instance:
 
 - In AWS (protected by AWS)
-
 - But: Single instance = single point of failure
+
 Better:
 
 - Instance + snapshot backup
-
 - Snapshots in multiple regions
-
 - Can restore quickly if needed
-
----
 
 ## How CIA Triad Works Together
 
@@ -388,11 +386,8 @@ secrets   │      exposure
 Hacker can:
 
 - Access production database (confidential data exposed)
-
 - Access S3 buckets (files exposed)
-
 - Access customer data (privacy breach)
-
 - Create new admin user (backdoor for future access)
 Confidentiality:  BROKEN
 
@@ -401,11 +396,8 @@ Confidentiality:  BROKEN
 Hacker can:
 
 - Modify database records
-
 - Delete log files (hide tracks!)
-
 - Create fake records
-
 - Plant malware in code
 Integrity: BROKEN
 
@@ -414,11 +406,8 @@ Integrity: BROKEN
 Hacker can:
 
 - Delete production database
-
 - Delete backups
-
 - Shutdown servers
-
 - Launch DDoS attack
 Availability:  SEVERELY BROKEN
 
@@ -431,25 +420,26 @@ Alerts trigger on deletion attempts (Availability monitoring)
 Response:
 
 Delete hacker's account (Confidentiality restored)
+
 Review logs (Integrity verification)
+
 Restore from backup (Availability recovery)
-
-
----
 
 ## CIA Triad Tradeoffs
 
 ### Confidentiality vs Availability
+
 Super secure (no access):
 
 - Confidentiality: Perfect
-
 - Availability: Zero (can't use it!)
+
 Too open (everyone has access):
 
 - Confidentiality: Broken
 
 - Availability: Perfect
+
 Balance:
 
 - Confidentiality: Good (least privilege)
@@ -457,13 +447,14 @@ Balance:
 - Availability: Good (users can access what they need)
 
 ### Security vs Convenience
-Maximum security (10-factor authentication):
+Maximum security (10 factor authentication):
 
 - Very secure
 
 - Users frustrated (can't log in easily)
 
 - Productivity drops
+
 No security (password only):
 
 - Easy to use
@@ -471,12 +462,11 @@ No security (password only):
 - Gets hacked constantly
 
 - Disaster
+
 Balance:
 
-- MFA (2-3 factors)
-
+- MFA (2 to 3 factors)
 - Strong passwords
-
 - Users can work efficiently
 
 ### Cost vs Security
@@ -495,9 +485,6 @@ Balance:
 Investment in security
 Proportional to what you're protecting
 Startup != Fortune 500 level of security
-
-
----
 
 ## CIA Triad in Different Scenarios
 
@@ -536,7 +523,7 @@ Startup != Fortune 500 level of security
 - Off-site disaster recovery
 - (Lives depend on it!)
 
-### Scenario 3: Startup (Like Mine!)
+### Scenario 3: Startup 
 
 **Confidentiality:**
 - Basic encryption
@@ -553,23 +540,27 @@ Startup != Fortune 500 level of security
 - Grow redundancy as business grows
 - Incremental improvements
 
----
-
 ## CIA Triad and My IAM Design
 
 ### How My Structure Protects CIA
 CONFIDENTIALITY:
 
 developer_test limited access
-auditor_test read-only
+
+auditor_test read only
+
 Finance manager only sees billing
+
+CEO admin access
 
 → Each person sees ONLY what they need
 
 INTEGRITY:
 
 CloudTrail logs all IAM actions
+
 Policies can't be modified by developers
+
 Audit trail proves who did what
 
 → Changes are tracked and verifiable
@@ -577,13 +568,12 @@ Audit trail proves who did what
 AVAILABILITY:
 
 Users can access what they need
+
 Policies don't block legitimate work
-System responsive and accessible
+
+System is responsive and accessible
 
 → Business operations continue
-
-
----
 
 ## Key Insights
 
@@ -614,8 +604,6 @@ When you see "hacker" news:
 - Often integrity broken (data modified)
 - Sometimes availability broken (systems down)
 
----
-
 ## Summary: CIA Triad Framework
 
 | Pillar | What | How | Why |
@@ -624,19 +612,9 @@ When you see "hacker" news:
 | **Integrity** | Prevent tampering | Audit logs, versioning | Data is accurate and trustworthy |
 | **Availability** | Ensure access | Redundancy, backups | Users can access when needed |
 
----
-
 ## Status
 
 **CIA Triad Framework: MASTERED** 
-
-This foundation unlocks understanding of:
-- Phase 2: IAM (confidentiality through permissions)
-- Phase 3: Network security (integrity of traffic)
-- Phase 4: Data security (all three applied to data)
-- All future security decisions
-
----
 
 **Key Learning:** CIA Triad is THE framework for security engineering.
 Every decision you make in security relates back to these three pillars.
