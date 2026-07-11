@@ -2,11 +2,9 @@
 
 ## Phase 1 Complete!
 
-**Completion Date:** June 8, 2025  
-**Time Investment:** Approximately 40-50 hours  
+**Completion Date:** June 8, 2026  
+**Time Investment:** Approximately 40 or 50 hours or more.
 **Status:** COMPLETE 
-
----
 
 ## What This Phase Covered
 
@@ -26,16 +24,16 @@
 - Version control best practices
 
 ### 3. 10 Linux Commands - Mastered
-- `pwd` - Know your location
-- `ls` - See what's there
-- `cd` - Navigate directories
-- `echo` - Write text/create files
-- `cat` - Read file contents
-- `touch` - Create empty files
-- `grep` - Search in files
-- `nano` - Edit files
-- `chmod` - Change permissions
-- `sudo` - Run as administrator
+- `pwd` = Know your location
+- `ls` = See what's there
+- `cd` = Navigate directories
+- `echo` = Write text/create files
+- `cat` = Read file contents
+- `touch` = Create empty files
+- `grep` = Search in files
+- `nano` = Edit files
+- `chmod` = Change permissions
+- `sudo` = Run as administrator
 
 ### 4. Real Security Incident Investigation
 - Used `journalctl | grep` to search logs
@@ -59,8 +57,6 @@
 - When to use each model
 - Responsibility matrix
 - Security implications of each
-
----
 
 ## Key Achievements
 
@@ -89,21 +85,17 @@
 - Dealt with real problems
 - Learned by doing
 
----
-
 ## Files in Phase 1
 
-- `01-linux-commands-mastery.md` - All 10 commands explained
-- `02-cloud-basics.md` - AWS setup and EC2
-- `03-cia-triad-framework.md` - Security foundation
-- `04-cloud-architecture-models.md` - IaaS/PaaS/SaaS
-- `05-real-world-incident.md` - Hacker investigation
-- `commands-cheatsheet.md` - Quick reference
-- `exercises-completed.md` - Lab work
-- `phase-1-checklist.md` - What was covered
-- `phase-1-reflection.md` - Personal learning
-
----
+- `01-linux-commands-mastery.md` = All 10 commands explained
+- `02-cloud-basics.md` = AWS setup and EC2
+- `03-cia-triad-framework.md` = Security foundation
+- `04-cloud-architecture-models.md` = IaaS/PaaS/SaaS
+- `05-real-world-incident.md` = Hacker investigation
+- `commands-cheatsheet.md` = Quick reference
+- `exercises-completed.md` = Lab work
+- `phase-1-checklist.md` = What was covered
+- `phase-1-reflection.md` = Personal learning
 
 ## Learning Approach Used
 
@@ -112,8 +104,6 @@
 - **Hands-on Labs:** Real AWS infrastructure
 - **Security-First Mindset:** Always ask "how could this be exploited?"
 - **Honest Feedback:** Say when you don't understand
-
----
 
 ## Key Insights Gained
 
@@ -138,34 +128,15 @@
    - Job market is hungry for these skills
    - Learning now = competitive advantage
 
----
-
-## Confidence Levels
-
-| Topic | Confidence |
-|-------|-----------|
-| Linux commands | 8/10 |
-| AWS basics | 7/10 |
-| CIA Triad | 8/10 |
-| Cloud architecture | 8/10 |
-| Security thinking | 7/10 |
-| Problem-solving | 8/10 |
-
-**Overall Phase 1 Confidence: 7.5/10** 
-
----
-
 ## Ready for Phase 2
 
-✅ Understand cloud fundamentals  
-✅ Comfortable with Linux  
-✅ Think about security implications  
-✅ Can investigate incidents  
-✅ Know when to research and learn  
+- Understand cloud fundamentals  
+- Comfortable with Linux  
+- Think about security implications  
+- Can investigate incidents  
+- Know when to research and learn  
 
-**Phase 2 Goal:** IAM deep dive - control who accesses what
-
----
+**Phase 2 Goal:** IAM deep dive, control who accesses what
 
 ## Lessons for Future Self
 
@@ -177,8 +148,4 @@
 - If you don't understand, ask questions
 - Real experience beats theory every time
 
----
-
-**Status:** Phase 1 Complete 
-**Next:** Phase 2 - IAM Fundamentals  
-**Journey:** Just getting started! 
+**Status:** Phase 1 Complete!
