@@ -1,10 +1,8 @@
-# Phase 1 - Completion Checklist
+# Phase 1: Completion Checklist
 
 Complete documentation of everything covered in Phase 1.
 
----
-
-## Cloud Basics ✅
+## Cloud Basics 
 
 - [x] AWS account creation
 - [x] MFA setup on root account
