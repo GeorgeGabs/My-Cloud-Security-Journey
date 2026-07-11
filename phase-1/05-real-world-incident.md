@@ -2,8 +2,6 @@
 
 Documentation of discovering and analyzing a REAL brute-force attack on MY EC2 instance.
 
----
-
 ## The Discovery
 
 ### When
