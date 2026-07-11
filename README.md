@@ -1,7 +1,6 @@
 # My Cloud Security Journey
-# My Cloud Security Learning Journey
 
-## 📚 Overview
+##  Overview
 Documenting my journey from zero to cloud security engineer.
 
 **Start Date:** June 2, 2026
@@ -10,12 +9,12 @@ Documenting my journey from zero to cloud security engineer.
 ## 🎯 Learning Roadmap
 
 ### Phase 1: Cloud & Security Foundations (4 weeks)
-- [ ] Week 1: Cloud Basics & CIA Triad
-- [ ] Week 2: Cloud Architecture  
-- [ ] Week 3-4: Advanced Architecture
+-  Week 1: Cloud Basics & CIA Triad
+-  Week 2: Cloud Architecture  
+-  Week 3-4: Advanced Architecture
 
 ### Phase 2: Identity & Access (4 weeks)
-- [ ] Week 5-8: IAM Deep Dive
+-  Week 5-8: IAM Deep Dive
 
 (And so on for remaining phases...)
 
