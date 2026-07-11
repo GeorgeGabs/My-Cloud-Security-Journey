@@ -2,7 +2,7 @@
 
 Documentation of discovering and analyzing a REAL brute-force attack on MY EC2 instance.
 
-# The Discovery
+## The Discovery
 
 ### When
 **Date:** June 8, 2026  
@@ -22,8 +22,6 @@ Expected: Theoretical understanding of logs
 Actual: Real hackers attacking RIGHT NOW
 
 Feeling: "This is actually happening!"
-
----
 
 ## The Evidence
 
@@ -61,8 +59,6 @@ Connection closed by invalid user admin 118.145.131.27 port 45090
 Invalid user drcomadmin from 102.37.156.238 port 53222
 Invalid user ftpadmin from 101.79.165.43 port 48600
 
----
-
 ## Attack Analysis
 
 ### Attacking IP Addresses
@@ -73,10 +69,9 @@ Invalid user ftpadmin from 101.79.165.43 port 48600
 Failed attempts: 8 times
 
 Attempted usernames:
-
-admin (multiple times)
-mailadmin (multiple times)
-ansadmin (once)
+- admin (multiple times)
+- mailadmin (multiple times)
+- ansadmin (once)
 
 Pattern:
 
