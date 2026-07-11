@@ -14,9 +14,8 @@ Complete documentation of everything covered in Phase 1.
 - [x] Understanding free tier (6 months, 750 hours/month)
 - [x] Cost awareness and monitoring
 
----
 
-## Linux Fundamentals ✅
+## Linux Fundamentals [x]
 
 ### Commands Mastered (10 Total)
 
