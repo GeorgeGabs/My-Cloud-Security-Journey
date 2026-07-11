@@ -2,7 +2,7 @@
 
 Documentation of discovering and analyzing a REAL brute-force attack on MY EC2 instance.
 
-## The Discovery
+# The Discovery
 
 ### When
 **Date:** June 8, 2026  
