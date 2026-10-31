@@ -107,17 +107,17 @@ Solution: Alerts = warning before damage
 
 **Instance Specifications:**
 
-AMI (Operating System): Amazon Linux 2
+AMI (Operating System): Amazon Linux 2023
 
 Instance Type: t3.micro (smallest, free tier eligible)
 
-Region: eu-west-1 (Europe;Ireland)
+Region: eu-west-1 (N.Virginia)
 
-Availability Zone: eu-west-1a
+Availability Zone: us-east-1c
 
-Instance ID: i-0655e524004d40cb9
+Instance ID: i-04aa62c08befc36a8
 
-Public IPv4: 19.180.254.27
+Public IPv4: <instance-public-ip>
 
 Status: Running (connected via SSH)
 
@@ -217,14 +217,14 @@ They can't get in
 
 #### 1. Fix Key Permissions
 ```powershell
-icacls "my-first-key.pem" /inheritance:r /grant:r "$env:username`:F"
+icacls <key file> /inheritance:r /grant:r "$env:username`:F"
 ```
 
 **Why?** Windows is paranoid about .pem file permissions. This restricts it to ONLY me.
 
 #### 2. Connect to Server
 ```powershell
-ssh -i "my-first-key.pem" ec2-user@19.180.254.27
+ssh -i <key file> ec2-user@<instance-public-ip>
 ```
 
 **Breaking it down:**
@@ -243,7 +243,7 @@ Are you sure you want to continue? (yes/no)
 Type: `yes`
 
 **Result:** Connected! 
-ec2-user@ip-172-31-0-1:~$
+ec2-user@ip-172-31-29-45:~$
 
 **I am now inside my cloud server!**
 
@@ -252,7 +252,7 @@ ec2-user@ip-172-31-0-1:~$
 ### From my Windows Computer
 ```powershell
 # Connect to cloud server
-ssh -i "my-first-key.pem" ec2-user@19.180.254.27
+ssh -i <key file> ec2-user@<instance-public-ip>
 
 # I am now in Linux!
 # Run any Linux command
