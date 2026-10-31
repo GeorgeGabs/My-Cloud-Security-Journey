@@ -54,8 +54,7 @@ Each screenshot is listed in the order I took it, with what it shows and what it
 - **Shows:** `ls -la` of the home directory, then `cd /var` and `pwd`.
 - **Proves:** I can read a full directory listing and move into system directories.
 
-## Instance Note
-
-The screenshots in this folder come from the EC2 instance labelled "third instance" in the console (Amazon Linux 2023). Some earlier Phase 1 notes refer to a different instance and to Amazon Linux 2. The screenshots are the accurate record of the labs.There might be a slight difference in my phase 1 notes and the screenshots of the labs that would be presented as evidence here.This is because it did not occur to me to take screenshot of them at the time, so this screenshots are now taken to show clarification and the fact that i can actually do what is i wrote in my documentation.The images that are shown are just the very tip of what i can do after learning a few linux commands.There are more i did not get into, such as "grep" "cat" "touch" and many more
+## Lab Instance Note
+The Phase 1 labs ran on a t3.micro Amazon Linux 2023 instance in us-east-1c. An earlier instance was launched in eu-west-1 during initial setup; screenshots in `evidence/` come from the us-east-1c instance.The screenshots in this folder come from the EC2 instance labelled "third instance" in the console (Amazon Linux 2023). Some earlier Phase 1 notes refer to a different instance and to Amazon Linux 2. The screenshots are the accurate record of the labs.There might be a slight difference in my phase 1 notes and the screenshots of the labs that would be presented as evidence here.This is because it did not occur to me to take screenshot of them at the time, so this screenshots are now taken to show clarification and the fact that i can actually do what is i wrote in my documentation.The images that are shown are just the very tip of what i can do after learning a few linux commands.There are more i did not get into, such as "grep" "cat" "touch" and many more.
 
 **Status:** Phase 1 evidence complete
