@@ -20,7 +20,7 @@ Each screenshot is listed in the order I took it, with what it shows and what it
 
 ### 4. Logged In to Amazon Linux 2023 (`phase-1-04-ssh-login-pwd.jpg`)
 - **Shows:** The Amazon Linux 2023 login banner and the prompt `ec2-user@ip-172-31-29-45`.
-- **Proves:** I connected to the EC2 instance over SSH.
+- **Proves:** I connected to the EC2 instance over SSH, then used "pwd" to confirm where i was.
 
 ### 5. Update Notice After Login (`phase-1-05-login-banner.jpg`)
 - **Shows:** The login banner with the notice that a newer Amazon Linux release is available.
@@ -56,6 +56,6 @@ Each screenshot is listed in the order I took it, with what it shows and what it
 
 ## Instance Note
 
-The screenshots in this folder come from the EC2 instance labelled "third instance" in the console (Amazon Linux 2023). Some earlier Phase 1 notes refer to a different instance and to Amazon Linux 2. The screenshots are the accurate record of the labs.There might be a slight difference in my phase 1 notes and the screenshots of the labs that would be presented as evidence here.This is because it did not occur to me to take screenshot of them at the time, so this screenshots are now taken to show clarification and the fact that i can actually do what is i wrote in my documentation. 
+The screenshots in this folder come from the EC2 instance labelled "third instance" in the console (Amazon Linux 2023). Some earlier Phase 1 notes refer to a different instance and to Amazon Linux 2. The screenshots are the accurate record of the labs.There might be a slight difference in my phase 1 notes and the screenshots of the labs that would be presented as evidence here.This is because it did not occur to me to take screenshot of them at the time, so this screenshots are now taken to show clarification and the fact that i can actually do what is i wrote in my documentation.The images that are shown are just the very tip of what i can do after learning a few linux commands.There are more i did not get into, such as "grep" "cat" "touch" and many more
 
-**Status:* Phase 1 evidence complete
+**Status:** Phase 1 evidence complete
