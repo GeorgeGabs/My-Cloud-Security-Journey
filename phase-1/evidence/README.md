@@ -58,4 +58,4 @@ Each screenshot is listed in the order I took it, with what it shows and what it
 
 The screenshots in this folder come from the EC2 instance labelled "third instance" in the console (Amazon Linux 2023). Some earlier Phase 1 notes refer to a different instance and to Amazon Linux 2. The screenshots are the accurate record of the labs.There might be a slight difference in my phase 1 notes and the screenshots of the labs that would be presented as evidence here.This is because it did not occur to me to take screenshot of them at the time, so this screenshots are now taken to show clarification and the fact that i can actually do what is i wrote in my documentation. 
 
-**Status:** Phase 1 evidence complete
+**Status:* Phase 1 evidence complete
