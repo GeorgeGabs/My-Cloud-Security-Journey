@@ -136,7 +136,7 @@ Unique attacking IPs: 5
 
 Unique usernames tried: 6 (admin, mailadmin, ansadmin, drcomadmin, ftpadmin)
 
-Date range: June 4, 2026 (multiple attempts over time)
+Date range: May 27, 2026 (multiple attempts over time)
 
 Primary attacker: 34.128.95.203
 
