@@ -148,4 +148,7 @@
 - If you don't understand, ask questions
 - Real experience beats theory every time
 
+## Lab Instance Note
+The Phase 1 labs ran on a t3.micro Amazon Linux 2023 instance in us-east-1c. An earlier instance was launched in eu-west-1 during initial setup; screenshots in `evidence/` come from the us-east-1c instance.
+
 **Status:** Phase 1 Complete!
