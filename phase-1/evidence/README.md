@@ -1,4 +1,4 @@
-# Phase 1: Lab Evidence
+# Phase 1: Lab Evidence 
 
 These screenshots are the proof for the Phase 1 hands on labs: launching an EC2 instance, connecting over SSH, practicing Linux commands, and investigating real login attempts in the system logs.
 
