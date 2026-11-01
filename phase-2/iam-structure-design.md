@@ -10,7 +10,7 @@ I created 5 groups so permissions are assigned once per role, not once per perso
 
 | Group | Members | Why it exists |
 |---|---|---|
-| CEO_group | CEO | The owner needs full access, but only uses it when necessary |
+| CEO_group | CEO | The owner has full access, but only uses it when necessary |
 | developers_group | 5 developers | Everyone doing development gets the same access. New hires just join the group |
 | DevOps_engineers_group | 2 DevOps engineers | Infrastructure and deployment access, kept separate from billing and IAM |
 | Financemanager_group | 1 finance manager | Billing and cost visibility only |
@@ -21,7 +21,7 @@ I created 5 groups so permissions are assigned once per role, not once per perso
 ## 2. Users vs Roles
 
 - **IAM users** are for people who log in: the CEO, developers, DevOps engineers, and the finance manager. Each person gets a user, so their actions are traceable in CloudTrail.
-- **IAM roles** are for services and applications. For example, EC2 uses a role to reach S3, and Lambda uses a role to reach DynamoDB. A role gives temporary credentials, so there are no long-lived keys to steal.
+- **IAM roles** are for services and applications. For example, EC2 uses a role to reach S3, and Lambda uses a role to reach DynamoDB. A role gives temporary credentials, so there are no long lived keys to steal.
 - **Temporary escalation** also uses roles. If a developer needs DevOps access for a task, they assume a role for a limited time, and the access ends when the session expires.
 
 ---
@@ -29,23 +29,23 @@ I created 5 groups so permissions are assigned once per role, not once per perso
 ## 3. Least Privilege Per Group
 
 **DevOps_engineers_group**
-- Can: EC2, S3, RDS, CodeDeploy, CodePipeline, CloudWatch (full access), IAM read-only, Secrets Manager read/write
-- Cannot: full IAM access, billing, creating IAM users, full CloudFormation access
+- Can have access to: EC2, S3, RDS, CodeDeploy, CodePipeline, CloudWatch (full access), IAM read-only, Secrets Manager read/write
+- Cannot have access to: full IAM access, billing, creating IAM users, full CloudFormation access
 - Why: they run the infrastructure, but they can't grant themselves more permissions or change billing
 
 **developers_group**
-- Can: DynamoDB read-only, EC2 read-only, S3 full access, CodeCommit power user
-- Cannot: billing, IAM, or full EC2 access
+- Can have access to: DynamoDB read-only, EC2 read-only, S3 full access, CodeCommit power user
+- Cannot have access to: billing, IAM, or full EC2 access
 - Why: they can read infrastructure and push code, but they can't change or delete production resources
 
 **Financemanager_group**
-- Can: billing read-only, budgets read-only, Cost Optimization Hub read-only
-- Cannot: any infrastructure or IAM access
+- Can have access to: billing read-only, budgets read-only, Cost Optimization Hub read-only
+- Cannot have access to: any infrastructure or IAM access
 - Why: they can see costs without touching systems. If the company trusts this person more, billing full access can be granted later
 
 **CEO_group**
-- Can: administrator access through an IAM user
-- Cannot: nothing is restricted by policy, this account is used only when needed by the CEO of that company
+- Can have access to: administrator access through an IAM user
+- Cannot have access to: nothing is restricted by policy, this account is used only when needed by the CEO of that company
 - Why: the owner needs full control, and I'd keep this user for emergencies rather than daily work
 
 ---
