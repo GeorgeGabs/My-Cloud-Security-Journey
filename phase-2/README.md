@@ -8,7 +8,7 @@ In this phase I learned how AWS controls who can do what, and I built and tested
 - **5 IAM groups:** CEO_group, developers_group, DevOps_engineers_group, Financemanager_group and Mycloudlab. Each group gets its permissions once, and every user in it inherits them.
 - **1 IAM role:** EC2-S3-Access-Role, attached to my EC2 instance so it can reach S3 without access keys.
 - **MFA:** I enabled an authenticator app on developer_test1 and tested a login that required the 6-digit code.
-- **Access keys:** I created a key for developer_test1, configured the AWS CLI with it, then rotated to a new key and deleted the old one.This particular bit was a bit confusing at first, but i managed to pull through.
+- **Access keys:** I created an access key, configured the AWS CLI with it, I am yet to rotate it to a new one, so it is inactive at the moment.This particular bit was confusing at first, but i managed to pull through.
 
 ## Concepts I Worked Through:
 
